@@ -13,7 +13,7 @@
 
  const configuration=new Configuration({
    
-    apiKey:"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"
+    apiKey:process.env.OPENAI_API_KEY
  })
 
  const openai =new OpenAIApi(configuration)
