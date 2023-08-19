@@ -42,16 +42,16 @@ const Customizer = () => {
     }
     const handelSubmit =async (type)=>{
         if(!prompt) return alert ("Please enter a prompt")
+        console.log(prompt);
         try {
             setGeneratingImg(false)
-            const response=await fetch('http://localhost:3000/api/v1/dalle',{
+            const response=await fetch('https://threejsdallegen.onrender.com',{
             method:'POST',
             headers:{
                 'Content-Type':'application/json'
             },
-            body:JSON.stringify({
-                prompt
-            })
+            body:JSON.stringify({prompt,type})
+            
            })
            const data= await response.json()
            console.log(data);
